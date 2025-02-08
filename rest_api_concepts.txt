@@ -1,0 +1,58 @@
+API Design & RESTful Services Interview Questions & Answers
+
+1. What is REST, and how does it differ from SOAP?
+   - REST (Representational State Transfer) is an architectural style for designing networked applications.
+   - Uses HTTP methods (GET, POST, PUT, DELETE) with lightweight formats like JSON and XML.
+   - REST is stateless, meaning each request contains all necessary information.
+   - SOAP (Simple Object Access Protocol) is a strict XML-based protocol that is heavier and more complex than REST.
+
+2. Explain the difference between GET, POST, PUT, PATCH, and DELETE.
+   - GET: Retrieves data from the server (Read operation).
+   - POST: Creates a new resource on the server.
+   - PUT: Updates an entire resource.
+   - PATCH: Partially updates a resource.
+   - DELETE: Removes a resource from the server.
+
+3. What are idempotent methods in REST APIs?
+   - Idempotent methods produce the same result whether called once or multiple times.
+   - GET, PUT, and DELETE are idempotent.
+   - POST is NOT idempotent because multiple calls create multiple resources.
+
+4. How do you handle authentication and authorization in an API?
+   - Authentication confirms the user’s identity (API Keys, JWT, OAuth 2.0, Basic Auth).
+   - Authorization grants access to resources (Role-based access control, permissions).
+   - Best practice: Use OAuth 2.0 for third-party authentication and JWT for token-based authentication.
+
+5. What are the best practices for securing RESTful APIs?
+   - Use HTTPS (SSL/TLS) for encrypted communication.
+   - Implement authentication (OAuth 2.0, JWT, API Keys).
+   - Validate and sanitize inputs to prevent SQL Injection and XSS.
+   - Implement rate limiting to prevent abuse.
+   - Use proper error handling and avoid exposing sensitive data.
+
+6. How do you handle rate limiting in APIs?
+   - Implement rate limiting via API gateways (e.g., AWS API Gateway, Kong, Nginx).
+   - Use token bucket or leaky bucket algorithms to control request flow.
+   - Define quotas per user or IP to prevent abuse.
+
+7. How would you design a REST API for an e-commerce store?
+   - Define resources: Products, Orders, Users, Cart, Payments.
+   - Example RESTful routes:
+     - GET /products -> List all products
+     - GET /products/{id} -> Get a single product
+     - POST /orders -> Create an order
+     - PUT /cart/{id} -> Update cart
+     - DELETE /orders/{id} -> Cancel an order
+   - Use authentication (JWT/OAuth).
+   - Implement caching for product listings.
+   - Use pagination and filtering for large datasets.
+
+8. What is GraphQL, and how does it compare to REST?
+   - GraphQL is a query language for APIs that allows clients to request only the needed data.
+   - Unlike REST, where fixed endpoints return predefined data, GraphQL lets clients specify their queries.
+   - Pros of GraphQL:
+     - Reduces over-fetching and under-fetching of data.
+     - Provides a single endpoint for fetching multiple resources.
+   - Cons of GraphQL:
+     - More complex to implement.
+     - Can lead to performance issues if queries are not optimized.
