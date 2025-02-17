@@ -1,0 +1,24 @@
+
+ 
+<form id="post-form">
+  <label for="post-title">Title:</label><br>
+  <input type="text" id="post-title" name="title" required><br><br>
+  <label for="post-content">Content:</label><br>
+  <textarea id="post-content" name="content" required></textarea><br><br>
+  <button type="submit" id="create-post-fetch">Create Post (fetch)</button>
+  <button type="submit" id="create-post-axios">Create Post (axios)</button>
+</form>
+<div id="post-message"></div>
+
+<style>
+.success {
+  color: green;
+}
+.error {
+  color: red;
+}
+</style>
+
+<script>
+  document.getElementById('post-form').addEventListener('submit', createPostFetch);  
+</script>
